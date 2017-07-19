@@ -39,6 +39,48 @@ gollum是一个轻量级的wiki系统，使用[git](Git)同步到你想要同步
 ## 运行
 在wiki目录运行 `gollum`命令，`gollum --adapter rugged`
 
+
+
+###  CONFIGURATION——官方文档
+
+Gollum comes with the following command line options:
+
+| Option            | Arguments | Description                              |
+| ----------------- | --------- | ---------------------------------------- |
+| --host            | [HOST]    | Specify the hostname or IP address to listen on. Default: `0.0.0.0`.1 |
+| --port            | [PORT]    | Specify the port to bind Gollum with. Default: `4567`. |
+| --config          | [FILE]    | Specify path to Gollum's configuration file. |
+| --ref             | [REF]     | Specify the git branch to serve. Default: `master`. |
+| --adapter         | [ADAPTER] | Launch Gollum using a specific git adapter. Default: `grit`.2 |
+| --bare            | none      | Tell Gollum that the git repository should be treated as bare. This is only necessary when using the default grit adapter. |
+| --base-path       | [PATH]    | Specify the leading portion of all Gollum URLs (path info). Setting this to `/wiki` will make the wiki accessible under `http://localhost:4567/wiki/`. Default: `/`. |
+| --page-file-dir   | [PATH]    | Specify the subdirectory for all pages. If set, Gollum will only serve pages from this directory and its subdirectories. Default: repository root. |
+| --css             | none      | Tell Gollum to inject custom CSS into each page. Uses `custom.css` from repository root.3,5 |
+| --js              | none      | Tell Gollum to inject custom JS into each page. Uses `custom.js` from repository root.3,5 |
+| --emoji           | none      | Parse and interpret emoji tags (e.g. ❤️). |
+| --no-edit         | none      | Disable the feature of editing pages.    |
+| --live-preview    | none      | Enable the live preview feature in page editor. |
+| --no-live-preview | none      | Disable the live preview feature in page editor. |
+| --allow-uploads   | [MODE]    | Enable file uploads. If set to `dir`, Gollum will store all uploads in the `/uploads/`directory in repository root. If set to `page`, Gollum will store each upload at the currently edited page.4 |
+| --mathjax         | none      | Enables MathJax (renders mathematical equations). By default, uses the `TeX-AMS-MML_HTMLorMML` config with the `autoload-all` extension.5 |
+| --irb             | none      | Launch Gollum in "console mode", with a [predefined API](https://github.com/gollum/gollum-lib/). |
+| --h1-title        | none      | Tell Gollum to use the first `<h1>` as page title. |
+| --show-all        | none      | Tell Gollum to also show files in the file view. By default, only valid pages are shown. |
+| --collapse-tree   | none      | Tell Gollum to collapse the file tree, when the file view is opened. By default, the tree is expanded. |
+| --user-icons      | [MODE]    | Tell Gollum to use specific user icons for history view. Can be set to `gravatar`, `identicon` or `none`. Default: `none`. |
+| --mathjax-config  | [FILE]    | Specify path to a custom MathJax configuration. If not specified, uses the `mathjax.config.js` file from repository root. |
+| --template-dir    | [PATH]    | Specify custom mustache template directory. |
+| --help            | none      | Display the list of options on the command line. |
+| --version         | none      | Display the current version of Gollum.   |
+
+**Notes:**
+
+1. The `0.0.0.0` IP address allows remote access. Should you wish for Gollum to turn into a personal Wiki, use `127.0.0.1`.
+2. Before using `--adapter`, you should probably read [this](https://github.com/gollum/gollum/wiki/Git-adapters) first.
+3. When `--css` or `--js` is used, respective files must be committed to your git repository or you will get a 302 redirect to the create a page.
+4. Files can be uploaded simply by dragging and dropping them onto the editor's text area (this is, however exclusive to the default editor, not the live preview editor).
+5. Read the relevant [Security note](https://github.com/gollum/gollum/wiki/Security#custom-cssjs--mathjax-config) before using these.
+
 ## 使用
 语法与标准[markdown](markdown)有一些区别，下面是发现的一些区别（逐步完善中）：
 
