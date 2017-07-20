@@ -1,7 +1,11 @@
 [TOC]
+## 主题
 
-# 常用软件
+### [让windows拥有MAC的效率](topic_windows_MAC)
 
+### [MAC上安装的软件](topic_installSoftFormac)
+
+### [知识管理系统搭建及使用](topic_KMsystem)
 
 ## 写作
 
@@ -9,9 +13,13 @@
 
 ### wiki
 
-####  gollum
+####  [gollum](gollum)
 
 #### DokuWiki
+
+## 网络分析
+
+### [httpwatch](httpwatch)
 
 ## 版本控制
 
@@ -58,15 +66,8 @@ https://www.getpostman.com/
 ### 电子邮件
 
 #### thunderbird
-MAC电子邮件客户端，杨冰使用的，看着效果不错
-
 
 ### 甘特图软件
 
 http://www.ganttproject.biz/download#license
 
-## 主题
-
-[让windows拥有MAC的效率](topic_windows_MAC)
-
-[MAC上安装的软件](topic_installSoftFormac)
