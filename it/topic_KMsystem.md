@@ -12,4 +12,4 @@
 
 
 
-`$gollum --base it --ref github --page-file-dir it`
+`gollum --base it --ref github --page-file-dir it`
